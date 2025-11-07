@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Happy Birthday My Love Haseeb 💖</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Poppins',sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd1dc,#ffe0b2);
+    color:#fff;
+    overflow:hidden;
+    transition:background 1s ease;
+  }
+  .page{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    transform:translateX(100%);
+    transition:all 1s ease;
+    padding:20px;
+  }
+  .page.active{opacity:1;transform:translateX(0);}
+  h1{
+    font-size:2.5em;
+    text-shadow:0 0 10px #fff,0 0 20px #ff6b81;
+  }
+  p{
+    font-size:1.2em;
+    margin-top:20px;
+    max-width:650px;
+    line-height:1.6em;
+  }
+  button{
+    margin-top:30px;
+    background:#fff;
+    color:#ff4b5c;
+    border:none;
+    padding:15px 30px;
+    font-size:18px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  button:hover{background:#ff4b5c;color:#fff;}
+  iframe.music{
+    position:fixed;
+    top:-100px;
+    width:1px;
+    height:1px;
+    border:0;
+  }
+  audio.voice{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Background instrumental -->
+<iframe class="music"
+src="https://www.youtube.com/embed/IQvQZRn0g2M?autoplay=1&loop=1&playlist=IQvQZRn0g2M"
+allow="autoplay"></iframe>
+
+<!-- Page 1 -->
+<div class="page active" id="page1">
+  <h1>🎂 Happy Birthday My Love Haseeb 💖</h1>
+  <p>
+    Hamesha khush raho meri jaan...  
+    Tumhara birthday hum hamesha saath reh kar manayenge.  
+    Tum meri life ho, meri jaan ho, mera sab kuch ho ❤️  
+    Once again, Happy Birthday my Love!
+  </p>
+  <button onclick="nextPage(2)">Next 💌</button>
+
+  <!-- AI-style female voice line -->
+  <audio class="voice" autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_female-voice-sample.mp3?filename=female-voice-sample.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<!-- Page 2 -->
+<div class="page" id="page2">
+  <h1>💞 From My Heart 💞</h1>
+  <p>
+    Meri jaan, hamesha mere saath rehna...  
+    Mujhe kabhi mat chhodna, kyunki main tumse hamesha pyaar karti hoon.  
+    Tum mere din ki muskurahat aur meri raat ki dua ho.  
+    Tum mere liye wo insan ho jiske bina main apni zindagi soch hi nahi sakti 💔  
+    I love you endlessly, my love.
+  </p>
+  <button onclick="nextPage(3)">Next ➡️</button>
+</div>
+
+<!-- Page 3 -->
+<div class="page" id="page3">
+  <h1>💭 Some Questions Just for You 💭</h1>
+  <p>
+    💖 Kya tum mere saath khush ho?<br><br>
+    💖 Kya hum puri life saath rahenge?<br><br>
+    💖 Kya tum mujhe hamesha aise hi pyaar karoge?<br><br>
+    💖 Kya tumhe meri yaad har pal aati hai?<br><br>
+    Tumhare jawab hi meri duniya hain 💕
+  </p>
+  <button onclick="restart()">🔁 Watch Again</button>
+</div>
+
+<script>
+let currentPage=1;
+function nextPage(num){
+  document.getElementById("page"+currentPage).classList.remove("active");
+  currentPage=num;
+  document.body.style.background=
+    num==2?"linear-gradient(135deg,#ffe0b2,#b2ebf2)":
+    num==3?"linear-gradient(135deg,#b2ebf2,#ffd1dc)":
+    "linear-gradient(135deg,#ffd1dc,#ffe0b2)";
+  document.getElementById("page"+num).classList.add("active");
+}
+function restart(){nextPage(1);}
+</script>
+
+</body>
+</html>
